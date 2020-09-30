@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns:th="http://www.thymeleaf.org">
+
+<p >Hello</p>
+<table>
+    <tr th:each="job: ${openjobs}">
+        <td th:text="${job.getName()}"></td>
+        <td th:text="${job.getDescription()}"></td>
+    </tr>
+</table>
+</html>

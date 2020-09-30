@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns:th="http://www.thymeleaf.org">
+
+<p >Hello</p>
+<table>
+    <tr th:each="bid: ${bids}">
+        <td th:text="${bid.getBidId()}"></td>
+        <td th:text="${bid.getPrice()}"></td>
+    </tr>
+</table>
+</html>
