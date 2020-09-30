@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+
+<div>
+   
+                <div class="panel-heading"> All  my lots </div>
+                <div >
+                    <table >
+                        <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>topic</th>
+                            <th>description</th>
+                            <th>price</th>
+                            <th>End date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat ="item in jobs">
+                            <td>{{item.name}}</td>
+                            <td>{{item.topic}}</td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.endDate}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+ 
+</body>
+</html>

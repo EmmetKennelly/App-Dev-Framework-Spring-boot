@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Log in with your account</title>
+</head>
+
+<body>
+
+
+     <div>
+    <form method="POST" action="${contextPath}/login" class="formSignIn">
+        <h2 class="heading">Log in</h2>
+            <span>${message}</span>
+            <input name="email" type="text" class="formEmail" placeholder="Email"/>
+            <input name="password" type="password" class="formPassword" placeholder="Password"/>
+            <span>${error}</span>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+            <h4><a href="${contextPath}/registration">Create an account</a></h4>
+    </form>
+   </div>
+  </body>
+</html>

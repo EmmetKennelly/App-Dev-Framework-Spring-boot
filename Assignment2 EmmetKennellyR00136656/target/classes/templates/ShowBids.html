@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Closed jobs</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-blue bg-dark">
+
+
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home Page </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/jobs/add">Add a job </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/jobs" >List of Jobs </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/getBids" >Closed jobs </a>
+                    </li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="container">
+
+        <table border="1px" style="position: center">
+            <thead>
+            <tr class="row-name">
+                <th>Name</th>
+                <th>Description</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Winning bid maker</th>
+                <th>Winning bid price</th>
+            </tr>
+            </thead>
+            <tr class="row-content" th:each="jobAndLowestBid: ${jobsAndTheirLowestBid}">
+                <td th:text="${jobAndLowestBid[0].name}"></td>
+                <td th:text="${jobAndLowestBid[0].description}"></td>
+                <td th:text="${jobAndLowestBid[0].startDate}"></td>
+                <td th:text="${jobAndLowestBid[0].finishDate}"></td>
+
+                <td th:if="${jobAndLowestBid[1]}" th:text="${jobAndLowestBid[1].getUser().getEmail()}"></td>
+                <td th:if="${jobAndLowestBid[1]}" th:text="${jobAndLowestBid[1].getPrice()}"></td>
+
+
+            </tr>
+
+            </c:forEach>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
